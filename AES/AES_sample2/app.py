@@ -5,8 +5,8 @@ db = pymysql.connect(
     host='127.0.0.1',
     port=3306,
     user='root',
-    passwd='mysql_password',
-    db='db_name',
+    passwd='whwnsgh99*',
+    db='python',
     charset='utf8'
 )
 
