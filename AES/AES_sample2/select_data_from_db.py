@@ -26,3 +26,5 @@ result = cursor.fetchall()
 # 전체 데이터 출력
 for x in range(0,len(result)):
     print(result[x], end='\n')
+
+db.close()

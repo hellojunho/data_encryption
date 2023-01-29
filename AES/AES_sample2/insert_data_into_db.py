@@ -22,6 +22,6 @@ val = (name, id, password)
 mycursor.execute(sql, val)
 
 db.commit()
+db.close()
 
 print(mycursor.rowcount, "record inserted")
-
