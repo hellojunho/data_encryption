@@ -1,16 +1,4 @@
-import pymysql
-
-db = pymysql.connect(
-    host='127.0.0.1',
-    port=3306,
-    user='root',
-    passwd='password',
-    db='python',
-    charset='utf8'
-)
-
-
-mycursor = db.cursor()
+from dao import *
 
 sql = "INSERT INTO test_table(name, id, password) VALUES (%s, %s, %s)"
 
@@ -18,10 +6,14 @@ name = input("input name : ")
 id = input("input id : ")
 password = input("input password : ")
 
-val = (name, id, password)
-mycursor.execute(sql, val)
+# 패스워드 암호화
+password_enc = encrypt(password)
+
+# 암호화한 패스워드로 데이터베이스에 저장
+val = (name, id, password_enc)
+cursor.execute(sql, val)
 
 db.commit()
 db.close()
 
-print(mycursor.rowcount, "record inserted")
+print(cursor.rowcount, "record inserted")

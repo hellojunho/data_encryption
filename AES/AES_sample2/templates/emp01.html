@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td{
+	border : 1px solid black;
+}
+</style>
+<meta charset="UTF-8">
+<title>회원관리</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>index</th>
+		<th>name</th>
+		<th>id</th>
+		<th>password</th>
+	</tr>
+		{% for test_table in empList%}
+		<tr>
+			<td>{{test_table.index}}</td>
+			<td>{{test_table.name}}</td>
+			<td>{{test_table.id}}</td>
+			<td>{{test_table.password}}</td>
+		</tr>
+		{% endfor %}
+</table>
+</body>
+</html>

@@ -1,17 +1,4 @@
-from test import *
-import pymysql
-
-db = pymysql.connect(
-    host='127.0.0.1',
-    port=3306,
-    user='root',
-    passwd='password',
-    db='python',
-    charset='utf8'
-)
-
-# cursor = db.cursor(pymysql.cursors.DictCursor)
-cursor = db.cursor()
+from dao import *
 
 sql = "select * from test_table;"
 
