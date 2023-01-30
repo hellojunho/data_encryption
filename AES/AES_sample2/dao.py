@@ -34,7 +34,7 @@ def main():
 
     # 몇 번째 열의 요소를 가져올건지?
     i = int(input("열 번호(idx) 입력 : ")) - 1
-    e = input('데이터 입력(name, id, password) : ')
+    e = input('데이터 입력(name, phone_num, rr_num) : ')
     print("원본 데이터 : ", result[i].get(e))
 
     data = result[i].get(e)

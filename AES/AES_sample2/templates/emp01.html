@@ -14,15 +14,15 @@ table, th, td{
 	<tr>
 		<th>index</th>
 		<th>name</th>
-		<th>id</th>
-		<th>password</th>
+		<th>phone_num</th>
+		<th>rr_num</th>
 	</tr>
 		{% for test_table in empList%}
 		<tr>
-			<td>{{test_table.index}}</td>
+			<td>{{test_table.idx}}</td>
 			<td>{{test_table.name}}</td>
-			<td>{{test_table.id}}</td>
-			<td>{{test_table.password}}</td>
+			<td>{{test_table.phone_num}}</td>
+			<td>{{test_table.rr_num}}</td>
 		</tr>
 		{% endfor %}
 </table>

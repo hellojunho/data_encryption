@@ -1,16 +1,17 @@
 from dao import *
 
-sql = "INSERT INTO test_table(name, id, password) VALUES (%s, %s, %s)"
+sql = "INSERT INTO test_table(name, phone_num, rr_num) VALUES (%s, %s, %s)"
 
 name = input("input name : ")
-id = input("input id : ")
-password = input("input password : ")
+phone_num = input("input phone number : ")
+rr_num = input("input resident registration number : ") # rr_num = resident_registration_number (주민등록번호)
 
-# 패스워드 암호화
-password_enc = encrypt(password)
+
+# 주민등록번호 암호화
+rr_num_dec = encrypt(rr_num)
 
 # 암호화한 패스워드로 데이터베이스에 저장
-val = (name, id, password_enc)
+val = (name, phone_num, rr_num_dec)
 cursor.execute(sql, val)
 
 db.commit()
