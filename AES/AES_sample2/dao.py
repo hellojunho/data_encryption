@@ -5,7 +5,7 @@ db = pymysql.connect(
     host='127.0.0.1',
     port=3306,
     user='root',
-    passwd='password',
+    passwd='password*',
     db='python',
     charset='utf8'
 )
@@ -32,15 +32,13 @@ def main():
     for x in range(0, len(result)):
         print(result[x], end='\n')
 
-    # 몇 번째 열의 요소를 가져올건지?
+    # 몇 번째 열의 요소를 가져올건지?1
     i = int(input("열 번호(idx) 입력 : ")) - 1
-    e = input('데이터 입력(name, phone_num, rr_num) : ')
-    print("원본 데이터 : ", result[i].get(e))
-
+    e = 'rr_num'
+    # print("원본 데이터 : ", result[i].get(e))
     data = result[i].get(e)
-    # data = input("문장 입력 : ")
-    print('암호화 : ', encrypt(data))
-    print('복호화 : ', decrypt(encrypt(data)))
+    print('암호화 : ', data)
+    print('복호화 : ', decrypt(data))
 
 
 def encrypt(data):

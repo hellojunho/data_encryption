@@ -13,7 +13,6 @@ rr_num_dec = encrypt(rr_num)
 # 암호화한 패스워드로 데이터베이스에 저장
 val = (name, phone_num, rr_num_dec)
 cursor.execute(sql, val)
-
 db.commit()
 db.close()
 
